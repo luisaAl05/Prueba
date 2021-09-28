@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="headers/encabezado :: head">
+</head>
+
+<body>
+	<header class="section-header">
+		<nav>
+			<ul>
+				<li><a href="/views/dashboard">Dashboard</a></li>
+				<li><a href="/views/usuarios">Usuarios</a></li>
+				<li><a href="">Cerrar Sesión</a></li>
+			</ul>
+		</nav>
+	</header>
+	<section class="page-content">
+		<section class="grid">
+			<article>
+				<div class="title">
+					<label>Clima</label>
+				</div>
+				<div class="div-content">
+				<img src="" class="imgclima" alt="clima" />
+					<p class="grados"></p>
+					
+					<div>
+			</article>
+			<article>
+				<div class="title">
+					<label>País seleccionado</label>
+				</div>
+				<div class="div-content">
+					<p class="pais"> </p>
+				</div>
+			</article>
+			<article>
+				<label>Tareas pendientes</label>
+				</br>
+				<div class="taskes">
+				
+				</div>
+			</article>
+			<article>
+				<div class="title">
+					<label>Hora</label>
+				</div>
+				<div class="div-content">
+					<p class="hora"></p>
+				</div>
+			</article>
+			<article>
+				<label>Tareas completadas</label>
+				</br>
+				<div class="taskes1">
+				
+				</div>
+			</article>
+			<article>
+				<div class="title">
+					<label>Zonas horarias disponibles</label>
+				</div>
+				<div class="div-content">
+					<p class="tz"></p>
+				</div>
+			</article>
+			<article>
+				<div class="title">
+					<label>Paises disponibles</label>
+				</div>
+				<div class="div-content">
+					<ul class="paises" style="height:500px;overflow-y:auto;">
+					</ul>
+				</div>
+			</article>
+		</section>
+	</section>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script type="text/javascript" th:src="@{/js/consumoApi.js}"></script>
+</body>

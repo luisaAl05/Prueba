@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<html xmlns:th="http://www.thymeleaf.org">
+	<meta charset="ISO-8859-1">
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+	<script type="text/javascript" th:src="@{/js/home.js}"></script>
+</head> 
+<body>
+
+		<div class="login-page">
+  <div class="form">
+    <form class="login-form"  th:action="@{/index}" method="post">
+    <label for="title">Bienvenido</label>
+      <input type="email" placeholder="Correo Electronico" name="username"/>
+      <input type="password" placeholder="Contraseña" name="password"/>
+      <button>Iniciar sesión</button>
+      <p class="message">¿No tienes cuenta? <a class="nav-link" th:href="@{/views/}">Registrate</a></p>
+        <div th:if="${param.error}" class="alert alert-danger" role="alert">
+		            Invalid username and password.
+		        </div>
+		        <div th:if="${param.logout}" class="alert alert-success" role="alert">
+		            You have been logged out.
+		        </div>
+    </form>
+  </div>
+</div>
+	
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+	<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="headers/encabezado :: head">
+</head>
+<body>
+ 	<header class="section-header">
+ 		<nav>
+		<ul>
+			<li><a href="/views/dashboard">Dashboard</a></li>
+			<li><a href="/views/usuarios">Usuarios</a></li>
+		</ul>
+	</nav>
+ 	</header>
+ 	<section class="users-list">
+ 	<div class="head">
+ 		<label>Lista de usuarios del sistema</label> </br>
+ 	</div>
+ 		<section class="users-title">
+ 			<b>Nombre</b>
+ 			<b>Correo Electronico</b>
+ 			<b>Fecha de registro</b>
+ 			<b>Ultimo login</b>
+ 		</section>
+ 		
+				<div th:each="us:${listaUsuarios}">
+					
+					<h th:text="${us.nombre_completo}"></h>
+					<h th:text="${us.correoelectronico}"></h>
+					<h th:text="${us.fecha_registro.toString().substring(0, 10)}"></h>
+					<h th:text="${us.ultima_conexion.toString().substring(0, 10)}"></h>
+				</div>
+			</tbody>
+		</table>
+ 	</section>
+ 	
+</body>
